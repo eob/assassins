@@ -1,0 +1,6 @@
+SSLOptions +OptRenegotiate
+SSLOptions +StdEnvVars
+SSLRequireSSL
+SSLVerifyClient require
+SSLVerifyDepth 3
+SSLRequire %{SSL_CLIENT_S_DN_O} == "MIT Computer Science & Artificial Intelligence Laboratory"

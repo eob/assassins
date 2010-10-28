@@ -4,11 +4,11 @@ function signups_available() {
 }
 
 function db_connect() {
-    $dbhost = 'sql.mit.edu';
-    $dbuser = 'eob';
-    $dbpass = 'hih33cod';
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die                      ('Error connecting to mysql');
-    $dbname = 'eob+assassin_production';
+    $dbhost = 'mysql.csail.mit.edu';
+    $dbuser = 'blackcloak';
+    $dbpass = 'n1nj4';
+    $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
+    $dbname = 'eob_assassins_game';
     mysql_select_db($dbname) or die("Couldn't connect");
 }
 
