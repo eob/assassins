@@ -94,7 +94,7 @@ You will be receiving an email from the mob boss in the coming days.<br />
 <br />
 Do not disappoint him.<br />
 <br />
-In the future, you may go <a href="https://scripts-cert.mit.edu/~eob/assassins/">here</a> to find your target.<br />
+In the future, you may go <a href="https://projects.csail.mit.edu/student-committee/assassins/">here</a> to find your target.<br />
 </body>
 </html>
 <?php

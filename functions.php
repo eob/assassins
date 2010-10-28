@@ -39,7 +39,7 @@ function is_beaver() {
 }
 
 function isAdmin() {
-    return ((memberEmail() == "eob@MIT.EDU") || (memberEmail() == "eskang@MIT.EDU"));
+    return ((memberEmail() == "eob@CSAIL.MIT.EDU") || (memberEmail() == "eskang@CSAIL.MIT.EDU"));
 }
 
 function is_assassin() {
@@ -83,7 +83,7 @@ function assassinNameForId($id) {
 }
 
 function memberEmail() {
-	return $_SERVER['SSL_CLIENT_S_DN_Email'];
+	return $_SERVER['REMOTE_USER'];
 }
 
 function createAgentId() {
