@@ -22,12 +22,20 @@ function make_seed()
 srand(make_seed());
 
 function is_beaver() {
-	if (@$_SERVER['SSL_CLIENT_S_DN_CN']) {
- 		return true;
-	}
-	else {
-		return false;
-	}
+    // This is for the IS&T Systems with MIT Certs:
+    // if (@$_SERVER['SSL_CLIENT_S_DN_CN']) {
+    //          return true;
+    // }
+    // else {
+    //  return false;
+    // }
+    // This is for the CSAIL systems with CSAIL certs
+    if (@$_SERVER['SSL_CLIENT_S_DN_O'] = "MIT Computer Science & Artificial Intelligence Laboratory") {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 function isAdmin() {
