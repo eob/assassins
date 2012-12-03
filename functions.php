@@ -1,12 +1,14 @@
 <?php
+include_once('config.php');
+
 function signups_available() {
 	return true;
 }
 
 function db_connect() {
     $dbhost = 'mysql.csail.mit.edu';
-    $dbuser = 'blackcloak';
-    $dbpass = 'n1nj4';
+    $dbuser = 'USER';
+    $dbpass = 'PASS';
     $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
     $dbname = 'eob_assassins_game';
     mysql_select_db($dbname) or die("Couldn't connect");
