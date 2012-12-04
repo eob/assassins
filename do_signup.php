@@ -1,4 +1,6 @@
 <?php
+  include_once('config.php');
+  global $game_mode;
 require("functions.php");
 if (is_beaver()) {
 	if (! is_assassin()) {
@@ -9,92 +11,28 @@ if (is_beaver()) {
 ?>
 <html>
 <head>
-<!-- Style from http://svanrog.deviantart.com/art/Terminal-CSS-129493473 -->
-<style>
-body{
-    background-color:#080808;
-    color:#5fba3d;
-	padding: 50px;
-    font-family:monospace, prestige;
+<?php
+if ($game_mode == "assassins") {
+?>
+<title>CSAIL Assassins</title>
+<?php
+  require("assassins/style.php");
+} else {
+?>
+<title>CSAIL Secret Santa</title>
+<?php
+  require("santa/style.php");
 }
-
-a{
-    color:#5fba3d;
-    text-decoration:underline;
-}
-
-.h1{
-    background-color:#080808;
-    color:#5fba3d;
-}
-
-h2{
-    color:#5fba3d;
-    font-family:monospace, prestige;
-}
-
-img{
-    width:0px;
-    height:0px;
-}
-
-li{
-    background-color:#080808;
-}
-
-.a{
-    background-color:#080808;
-}
-
-.redback{
-    background-color:#d5381a;
-    color:#080808;
-}
-
-.blueback{
-    background-color:#0034dc;
-    color:#5fba3d;
-}
-
-.greenback{
-    background-color:#5fba3d;
-    color:#080808;
-}
-
-.yellowback{
-    background-color:#e5df43;
-    color:#d5381a;
-}
-
-.greyback{
-    background-color:#888888;
-    color:#ffffff;
-}
-
-.border{
-    width:auto;
-    height:auto;
-    border-style:solid;
-    border-width:3px;
-    border-color:#888888;
-}
-
-.image{
-    width:auto;
-    height:auto;
-}
-</style>
+?>
 </head>
 <body>
-<h1><? echo $_POST["name"] ?>,<br /></h1>
-<br />
-Welcome to the mob. We're sure you'll like it here.. as long as you live long enough to enjoy the fruits of your labor.<br />
-<br />
-You will be receiving an email from the mob boss in the coming days.<br />
-<br />
-Do not disappoint him.<br />
-<br />
-In the future, you may go <a href="https://projects.csail.mit.edu/student-committee/assassins/">here</a> to find your target.<br />
+<?php
+if ($game_mode == "assassins") {
+  require("assassins/welcome.php");
+} else {
+  require("santa/welcome.php");
+}
+?>
 </body>
 </html>
 <?php

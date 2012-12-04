@@ -1,5 +1,10 @@
 <?php
+
 include_once('config.php');
+global $db_server;
+global $db_name;
+global $db_user;
+global $db_password;
 
 function signups_available() {
 	return true;
@@ -9,15 +14,13 @@ function db_connect() {
     $dbhost = 'mysql.csail.mit.edu';
     $dbuser = 'USER';
     $dbpass = 'PASS';
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
-    $dbname = 'eob_assassins_game';
-    mysql_select_db($dbname) or die("Couldn't connect");
+    $conn = mysql_connect($db_server, $db_user, $db_password) or die ('Error connecting to mysql');
+    mysql_select_db($db_name) or die("Couldn't connect");
 }
 
 db_connect();
 
-function make_seed()
-{
+function make_seed() {
   list($usec, $sec) = explode(' ', microtime());
   return (float) $sec + ((float) $usec * 100000);
 }

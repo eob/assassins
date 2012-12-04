@@ -22,8 +22,7 @@ Setting up a new game
 Running the game
 ----------------
 
-The game is managed in a rather low way: by editing the source code.
+The game is managed in a rather low-tech way: by editing the source code.
 
 Luckily all the edits you need to make are just variables in `config.php`
-
 

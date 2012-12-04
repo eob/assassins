@@ -1,4 +1,5 @@
 <?
+require_once("config.php");
 require("functions.php");
 
 if (isAdmin()) {

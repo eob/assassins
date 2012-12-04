@@ -1,5 +1,10 @@
-Agent 88, <br />
-Signups have closed for this round of assassins. <br />
-Don't let this stop you from nurf-gunning your officemate, though.<br />
-<br />
--The Mob Boss
+<?php
+  include_once('config.php');
+  global $game_mode;
+
+  if ($game_mode == 'assassins') {
+    require("assassins/signups_closed.php");
+  } else {
+    require("santa/signups_closed.php");
+  }
+?>
