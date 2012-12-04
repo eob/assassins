@@ -16,9 +16,6 @@ Setting up a new game
 
 3. Edit config.php to include your new database name, user, password, and game mode
 
-4. 
-
-
 Running the game
 ----------------
 
@@ -26,3 +23,4 @@ The game is managed in a rather low-tech way: by editing the source code.
 
 Luckily all the edits you need to make are just variables in `config.php`
 
+.. (TBD) ..
