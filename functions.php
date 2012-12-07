@@ -120,7 +120,7 @@ function createAgentId() {
 }
 
 function add_assassin($name) {
-    $sql = "INSERT INTO assassins(name, email, agent_number) VALUES ('" . mysql_real_escape_string($name) . "', '" . memberEmail() . "', " . createAgentId() . ");";
+    $sql = "INSERT INTO assassins(name, real_name, email, agent_number) VALUES ('" . mysql_real_escape_string($name) . "', '" . memberName() . "', '" . memberEmail() . "', " . createAgentId() . ");";
 	$res = mysql_query($sql);
 }
 
