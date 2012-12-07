@@ -11,7 +11,7 @@ a{
     text-decoration:underline;
 }
 
-.h1{
+h1{
     background-color:#080808;
     color:#5fba3d;
 }

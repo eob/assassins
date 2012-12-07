@@ -1,5 +1,6 @@
 <?php
   include_once('config.php');
+  include_once('config.php');
   global $game_mode;
 
 if (is_beaver()) {

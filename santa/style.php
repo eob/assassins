@@ -2,8 +2,9 @@
 body{
     background-color:#080808;
     color:#5fba3d;
-	padding: 50px;
-    font-family:monospace, prestige;
+  	padding: 50px;
+    font-family:'Lancelot', cursive;
+    font-size: 1.3em;
 }
 
 a{
@@ -11,14 +12,15 @@ a{
     text-decoration:underline;
 }
 
-.h1{
+h1{
+  font-family: 'Mountains of Christmas', cursive;
     background-color:#080808;
     color:#5fba3d;
 }
 
 h2{
-    color:#5fba3d;
-    font-family:monospace, prestige;
+  font-family: 'Mountains of Christmas', cursive;
+  color:#5fba3d;
 }
 
 img{
@@ -70,5 +72,11 @@ li{
 .image{
     width:auto;
     height:auto;
+}
+
+.inputbutton {
+  border: 1px solid green;
+  padding: 5px;
+  font-weight: bold;
 }
 </style>

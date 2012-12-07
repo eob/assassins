@@ -1,5 +1,5 @@
 <?php
-  include_once('config.php');
+  require_once('config.php');
 	require_once("functions.php");
   global $game_mode;
 ?>
@@ -10,11 +10,13 @@ if ($game_mode == "assassins") {
 ?>
 <title>CSAIL Assassins</title>
 <?php
+  require("assassins/head.php");
   require("assassins/style.php");
 } else {
 ?>
 <title>CSAIL Secret Santa</title>
 <?php
+  require("santa/head.php");
   require("santa/style.php");
 }
 ?>

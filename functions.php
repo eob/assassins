@@ -1,21 +1,21 @@
 <?php
 
 include_once('config.php');
-global $db_server;
-global $db_name;
-global $db_user;
-global $db_password;
 
 function signups_available() {
 	return true;
 }
 
 function db_connect() {
-    $dbhost = 'mysql.csail.mit.edu';
-    $dbuser = 'USER';
-    $dbpass = 'PASS';
-    $conn = mysql_connect($db_server, $db_user, $db_password) or die ('Error connecting to mysql');
-    mysql_select_db($db_name) or die("Couldn't connect");
+  global $db_server;
+  global $db_name;
+  global $db_user;
+  global $db_password;
+  $dbhost = 'mysql.csail.mit.edu';
+  $dbuser = 'USER';
+  $dbpass = 'PASS';
+  $conn = mysql_connect($db_server, $db_user, $db_password) or die ('Error connecting to mysql');
+  mysql_select_db($db_name) or die("Couldn't connect");
 }
 
 db_connect();
@@ -56,8 +56,25 @@ function is_assassin() {
 	return false;	
 }
 
+function memberNick() {
+	$sql = "SELECT name FROM assassins WHERE email = '" . memberEmail() . "';";
+	$res = mysql_query($sql);
+  if ($row = mysql_fetch_assoc($res)) {
+      return $row["name"];
+	}
+	return "Unknown";	
+}
+
 function memberName() {
-	return $_SERVER['SSL_CLIENT_S_DN_CN'];
+  $name = '';
+  $name = $_SERVER['SSL_CLIENT_S_DN_CN'];
+  if (sizeof($name) == 0) {
+    $name = $_SERVER['REDIRECT_SSL_CLIENT_S_DN_CN'];
+  }
+  if (sizeof($name) == 0) {
+    $name = "Unknown CSAILor";
+  }
+  return $name;
 }
 
 function killsForAgent($id) {
@@ -88,7 +105,14 @@ function assassinNameForId($id) {
 }
 
 function memberEmail() {
-	return $_SERVER['REMOTE_USER'];
+  $e = $_SERVER['REMOTE_USER'];
+  if (sizeof($e) == 0) {
+    $e = $_SERVER['REDIRECT_SSL_CLIENT_S_DN_Email'];
+  }
+  if (sizeof($e) == 0) {
+    $e = $_SERVER['REDIRECT_REMOTE_USER'];
+  }
+  return $e;
 }
 
 function createAgentId() {
