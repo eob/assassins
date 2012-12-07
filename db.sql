@@ -1,6 +1,7 @@
 CREATE TABLE `assassins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `real_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `killed_by` int(11) NOT NULL DEFAULT '0',
   `killed_conf` int(11) NOT NULL DEFAULT '0',
